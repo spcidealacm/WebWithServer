@@ -25,9 +25,9 @@ function App() {
   const [socket, status] = useSocket(address)
   return (
     <VMLayout>
-      <VMHead>Visonary Machines Head</VMHead>
+      <VMHead>Head</VMHead>
       <VMCenteredTabs />
-      <VMFoot>Visonary Machines Foot</VMFoot>
+      <VMFoot>Foot</VMFoot>
     </VMLayout>
   )
 }
