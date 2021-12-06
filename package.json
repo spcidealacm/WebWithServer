@@ -1,0 +1,26 @@
+{
+  "name": "visionary_machines_webui",
+  "private": true,
+  "scripts": {
+    "require": "bash rquire.sh",
+    "install": "cd ./server && yarn && node-prune && cd ../web && yarn && node-prune && cd ../ && rm -rf node_modules",
+    "server": "cd ./server && yarn start",
+    "webdev": "cd ./web && yarn dev",
+    "dev": "yarn server & yarn webdev",
+    "build": "cd ./web && yarn build",
+    "webstart": "cd ./web && yarn start",
+    "start": "yarn server & yarn webstart",
+    "serverclear": "cd ./server && rm -rf node_modules",
+    "webclear": "cd ./web && rm -rf node_modules",
+    "webdistclear": "cd ./web && rm -rf dist",
+    "clear": "yarn serverclear & yarn webclear & yarn webdistclear & yarn prod_clear",
+    "prod_clear": "rm -rf production",
+    "prod_size": "du -sh production",
+    "server_reduce": "cd server && node-prune",
+    "web_reduce": "cd web && node-prune",
+    "prod_package": "cd production && mv package.prod.json package.json",
+    "prod_online": "yarn prod_clear && yarn install && yarn build && rsync -av --include='web/dist' --exclude 'server/node_modules' --exclude-from='exclude.txt' ./ production && yarn prod_package && yarn prod_size",
+    "prod_offline": "yarn prod_clear && yarn install && yarn build && rsync -av --include='web/dist' --exclude-from='exclude.txt' ./ production && yarn prod_package && yarn prod_size",
+    "prod": "yarn prod_online"
+  }
+}

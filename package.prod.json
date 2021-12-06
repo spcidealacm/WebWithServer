@@ -1,0 +1,11 @@
+{
+  "name": "visionary_machines_webui",
+  "private": true,
+  "scripts": {
+    "require": "bash rquire.sh",
+    "install": "cd ./server && yarn && node-prune && cd .. && rm -rf node_modules",
+    "server": "cd ./server && yarn start",
+    "web": "live-server web/dist --port=9090 --no-browser",
+    "start": "clear && yarn server & yarn web"
+  }
+}

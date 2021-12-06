@@ -1,0 +1,1 @@
+npm i -g ts-node live-server node-prune

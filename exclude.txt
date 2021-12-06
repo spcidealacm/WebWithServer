@@ -1,0 +1,12 @@
+.DS_Store
+*.local
+.env
+yarn.lock
+exclude.txt
+.git
+.gitignore
+.vscode
+yarn.lock
+README.md
+web/*
+./package.json
